@@ -135,3 +135,29 @@ module.exports = {
   ]
 }
 ```
+
+## 8.) Create a Babel config file
+
+Create a file in your project directory called: .babelrc and add the following code:
+
+```javascript
+{
+  "presets": ["@babel/preset-env"]
+}
+```
+
+## 9.) Fix the server.js file
+
+Create a file in your project directory called: .babelrc and add the following code:
+
+```javascript
+const path = require('path');
+const express = require('express');
+```
+
+to
+
+```javascript
+import path from 'path';
+import express from 'express';
+```
