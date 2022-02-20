@@ -246,3 +246,13 @@ h1, h2, h3, h4, h5, p {
   background-repeat: no-repeat;
 }
 ```
+
+## 15.) Create index.js file
+
+Create ./src/index.js file and add the following code:
+
+```javascript
+import logMessage from './js/logger';
+import './css/style.css';
+logMessage('Testing logging feature!');
+```
