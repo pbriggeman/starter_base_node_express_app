@@ -70,3 +70,68 @@ npm start
 ```
 
 If there are no errors reported when you run "npm start", then open your browser to:  <http://localhost:8000> and you should see your "Hello World!" page.
+
+## 5.) Install Webpack
+
+We're now going to install Webpack and a couple of extra modules, the CLI module is needed to run Webpack from the command line.  The module "webpack-node-externals" is required to define modules that you don't want bundled with your application.  This is specific to the "node-modules" directory in node applications.  The "html-webpack-plugin" is used to help make the creation of HTML much simpler.  The module "html-webpack-plugin" is needed to copy over our required files to the "dist" directory.
+
+```shell
+npm install --save-dev webpack webpack-cli webpack-node-externals html-webpack-plugin
+```
+
+## 6.) Install Babel
+
+Now, we'll install Babel which is used to transpile ES6^ features to ES5 and the "html-loader" module is used to insert a script tag in your HTML file that will import the transpiled main Javascript file.
+
+```shell
+npm install --save-dev @babel/core @babel/preset-env babel-loader html-loader
+```
+
+## 7.) Create Webpack config file
+
+Create a file in your project directory called: webpack.config.js and add the following code:
+
+```javascript
+const path = require('path')
+const webpack = require('webpack')
+const nodeExternals = require('webpack-node-externals')
+const HtmlWebPackPlugin = require("html-webpack-plugin")
+module.exports = {
+  entry: {
+    server: './server.js',
+  },
+  output: {
+    path: path.join(__dirname, 'dist'),
+    publicPath: '/',
+    filename: '[name].js'
+  },
+  target: 'node',
+  node: {
+     __dirname: false,
+    __filename: false,
+  },
+  externals: [nodeExternals()],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
+      {
+        test: /\.html$/,
+        use: [{loader: "html-loader"}]
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./index.html",
+      filename: "./index.html",
+      excludeChunks: [ 'server' ]
+    })
+  ]
+}
+```
