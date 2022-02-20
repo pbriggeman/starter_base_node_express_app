@@ -45,3 +45,20 @@ app.listen(PORT, () => {
   console.log('Press Ctrl+C to quit.');
 });
 ```
+
+## 3.) Create HTML file
+
+Create a file in your project directory called: index.html and add the following code:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Base Node Express App</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+</body>
+</html>
+```
