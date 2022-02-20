@@ -62,3 +62,11 @@ Create a file in your project directory called: index.html and add the following
 </body>
 </html>
 ```
+
+## 4.) Test your work
+
+```shell
+npm start
+```
+
+If there are no errors reported when you run "npm start", then open your browser to:  <http://localhost:8000> and you should see your "Hello World!" page.
