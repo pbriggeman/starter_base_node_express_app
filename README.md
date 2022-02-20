@@ -270,3 +270,39 @@ export default logMessage;
 
 Let's clean up the root of your application folder and move the server.js file to /src/server/server.js
 
+## 18.) Create webpack.server.config.js file
+
+Create ./webpack.server.config.js file and add the following code:
+
+```javascript
+const path = require('path');
+const webpack = require('webpack');
+const nodeExternals = require('webpack-node-externals');
+module.exports = {
+  entry: {
+    server: './src/server/server.js',
+  },
+  output: {
+    path: path.join(__dirname, 'dist'),
+    publicPath: '/',
+    filename: '[name].js'
+  },
+  target: 'node',
+  node: {
+    __dirname: false,
+    __filename: false,
+  },
+  externals: [nodeExternals()],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      }
+    ]
+  }
+};
+```
