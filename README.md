@@ -256,3 +256,12 @@ import logMessage from './js/logger';
 import './css/style.css';
 logMessage('Testing logging feature!');
 ```
+
+## 16.) Create logger.js file
+
+Create ./src/js/logger.js file and add the following code:
+
+```javascript
+const logMessage = msg => console.log(msg);
+export default logMessage;
+```
