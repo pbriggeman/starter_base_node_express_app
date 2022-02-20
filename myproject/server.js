@@ -1,5 +1,5 @@
-const path = require('path');
-const express = require('express');
+import path from 'path';
+import express from 'express';
 
 const app = express(), index = path.join(__dirname, 'index.html');
 app.use(express.static(__dirname))
