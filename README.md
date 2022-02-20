@@ -265,3 +265,8 @@ Create ./src/js/logger.js file and add the following code:
 const logMessage = msg => console.log(msg);
 export default logMessage;
 ```
+
+## 17.) Clean up ROOT
+
+Let's clean up the root of your application folder and move the server.js file to /src/server/server.js
+
