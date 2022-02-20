@@ -364,3 +364,14 @@ module.exports = {
   ]
 };
 ```
+
+## 20.) Wrapping up
+
+You should be able to build andd then launch server:
+
+```shell
+npm run build
+npm start
+```
+
+If there are any errors reported, try to fix them.  This should give you a very basic application to start with.  Stay tuned for Part 2, where we will add different environment builds and start to expand the Express sontrollers for a more scalable application.
