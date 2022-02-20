@@ -161,3 +161,23 @@ to
 import path from 'path';
 import express from 'express';
 ```
+
+## 10.) Modify package.json scripts parameters
+
+We now have to modify the packagae.json file:
+
+```javascript
+ "scripts": {
+    "start": "node ./server.js"
+  },
+```
+
+to
+
+```javascript
+ "scripts": {
+    "build": "rmdir dist && webpack --mode development",
+    "start": "node ./dist/server.js"
+  },
+```
+
