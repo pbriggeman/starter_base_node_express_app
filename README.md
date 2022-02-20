@@ -181,3 +181,68 @@ to
   },
 ```
 
+## 11.) Add CSS and Javascript to app build
+
+```shell
+npm install --save-dev css-loader file-loader style-loader
+```
+
+## 12.) Modify package.json scripts parameters
+
+We now have to modify the packagae.json file once again:
+
+```javascript
+ "scripts": {
+    "build": "rmdir dist && webpack --mode development",
+    "start": "node ./dist/server.js"
+  },
+```
+
+to
+
+```javascript
+ "scripts": {
+    "build": "rmdir dist && webpack --mode development --config webpack.server.config.js && webpack --mode development",
+    "start": "node ./dist/server.js"
+  },
+```
+
+## 13.) Update HTML file
+
+We now have to modify the index.html file:
+
+```html
+<body>
+    <h1>Hello World!</h1>
+</body>
+```
+
+to
+
+```html
+<body>
+    <h1>Hello World!</h1>
+    <div class="test-class"></div>
+</body>
+```
+
+## 14.) Create CSS file
+
+Create ./src/css/style.css file and add the following code:
+
+```css
+h1, h2, h3, h4, h5, p {
+  font-family: helvetica;
+  color: #3e3e3e;
+}
+.desc {
+  font-size: 14px;
+  color: #9e9e9e;
+}
+.test-class {
+  width: 300px;
+  height: 300px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+```
