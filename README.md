@@ -189,7 +189,7 @@ npm install --save-dev css-loader file-loader style-loader
 
 ## 12.) Modify package.json scripts parameters
 
-We now have to modify the packagae.json file once again:
+We now have to modify the package.json file once again:
 
 ```javascript
  "scripts": {
