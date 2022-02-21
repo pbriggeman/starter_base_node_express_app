@@ -164,7 +164,7 @@ import express from 'express';
 
 ## 10.) Modify package.json scripts parameters
 
-We now have to modify the packagae.json file:
+We now have to modify the package.json file:
 
 ```javascript
  "scripts": {
