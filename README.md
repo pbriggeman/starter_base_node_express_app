@@ -148,7 +148,7 @@ Create a file in your project directory called: .babelrc and add the following c
 
 ## 9.) Fix the server.js file
 
-Create a file in your project directory called: .babelrc and add the following code:
+We need to modify the server.js file so that we can track on this file if there are any changes:
 
 ```javascript
 const path = require('path');
