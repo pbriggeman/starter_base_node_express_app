@@ -367,7 +367,7 @@ module.exports = {
 
 ## 20.) Wrapping up
 
-You should be able to build andd then launch server:
+You should be able to build and then launch server:
 
 ```shell
 npm run build
